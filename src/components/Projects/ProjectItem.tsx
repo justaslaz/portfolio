@@ -18,7 +18,7 @@ export default function ProjectItem({
     <a
       target="_blank"
       href={projectUrl}
-      className="cursor-pointer overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg dark:bg-gray-700"
+      className="basis-96 cursor-pointer overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg dark:bg-gray-700"
     >
       <figure className="h-48 overflow-hidden">
         <img

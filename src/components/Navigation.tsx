@@ -60,7 +60,7 @@ export default function Navigation() {
 
   return (
     <div
-      className={`sticky top-0 grid w-full grid-cols-2 place-items-center gap-6 border-b-2 bg-violet-50 px-6 py-4 dark:border-gray-600 dark:bg-gray-700 lg:grid-cols-3 ${
+      className={`sticky top-0 z-20 grid w-full grid-cols-2 place-items-center gap-6 border-b-2 bg-violet-50 px-6 py-4 dark:border-gray-600 dark:bg-gray-700 lg:grid-cols-3 ${
         isNavShown
           ? 'translate-y-0 transition-transform duration-500 ease-in-out'
           : '-translate-y-full transition-transform duration-500 ease-in-out'

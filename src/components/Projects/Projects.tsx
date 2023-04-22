@@ -1,6 +1,8 @@
+import { Popover } from '@headlessui/react';
 import projects from '../../data/projects';
 import Title from '../Title';
 import ProjectItem from './ProjectItem';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 export default function Projects() {
   return (
@@ -9,7 +11,7 @@ export default function Projects() {
       className="mb-20 flex scroll-mt-20 flex-col items-center justify-center"
     >
       <Title>Projects</Title>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="flex w-11/12 max-w-7xl flex-wrap items-center justify-center gap-4">
         {projects.map((project) => (
           <ProjectItem
             key={project.id}
@@ -21,6 +23,24 @@ export default function Projects() {
             isNew={project.isNew}
           />
         ))}
+
+        <Popover className="relative flex basis-96 justify-center p-6">
+          <Popover.Button className="flex items-center gap-3 rounded-md bg-gray-200 px-3 py-1.5 shadow-sm transition-all duration-300 hover:bg-gray-300 hover:shadow-md focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">
+            <span>What's next?</span>
+            <ChevronDownIcon className="h-4 w-4" />
+          </Popover.Button>
+
+          <Popover.Panel className="absolute top-0 z-10 rounded-md bg-white p-4 shadow-md dark:bg-gray-700">
+            <h3 className="mb-2 font-semibold">Redo Food Recipes Website</h3>
+            <p className="text-sm">
+              Using React,{' '}
+              <strong className="font-medium dark:font-bold">
+                Next.JS, MongoDB
+              </strong>
+              , TypeScript and Tailwind CSS.
+            </p>
+          </Popover.Panel>
+        </Popover>
       </div>
     </div>
   );
