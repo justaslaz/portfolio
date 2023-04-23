@@ -25,12 +25,12 @@ export default function Projects() {
         ))}
 
         <Popover className="relative flex basis-96 justify-center p-6">
-          <Popover.Button className="flex items-center gap-3 rounded-md bg-gray-200 px-3 py-1.5 shadow-sm transition-all duration-300 hover:bg-gray-300 hover:shadow-md focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">
+          <Popover.Button className="flex items-center gap-3 rounded-md bg-gray-200 px-3 py-1.5 shadow-sm ring-1 ring-gray-900/5 transition-all duration-300 hover:bg-gray-300 hover:shadow-md focus:outline-none dark:bg-gray-700 dark:ring-white/5 dark:hover:bg-gray-600">
             <span>What's next?</span>
             <ChevronDownIcon className="h-4 w-4" />
           </Popover.Button>
 
-          <Popover.Panel className="absolute top-0 z-10 rounded-md bg-white p-4 shadow-md dark:bg-gray-700">
+          <Popover.Panel className="absolute top-0 z-10 rounded-md bg-white p-4 shadow-md ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-white/5">
             <h3 className="mb-2 font-semibold">Redo Food Recipes Website</h3>
             <p className="text-sm">
               Using React,{' '}

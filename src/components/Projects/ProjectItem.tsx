@@ -18,17 +18,17 @@ export default function ProjectItem({
     <a
       target="_blank"
       href={projectUrl}
-      className="basis-96 cursor-pointer overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg dark:bg-gray-700"
+      className="group basis-96 cursor-pointer overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-gray-900/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg dark:bg-gray-700 dark:ring-white/5"
     >
       <figure className="h-48 overflow-hidden">
         <img
           src={imgUrl}
           alt={title}
-          className="h-48 w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
+          className="h-48 w-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
         />
       </figure>
 
-      <div className="flex w-full flex-col gap-2 p-4 md:gap-3">
+      <div className="flex w-full flex-col gap-2 p-4 transition-colors duration-500 ease-in-out group-hover:bg-gray-800 group-hover:text-gray-300 dark:group-hover:bg-gray-300 dark:group-hover:text-gray-800 md:gap-3">
         <div className="flex items-center gap-3">
           <h3 className="text-lg font-semibold md:text-xl">{title}</h3>
           {isNew && (
