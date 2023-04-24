@@ -35,7 +35,7 @@ export default function Projects() {
             <p className="text-sm">
               Using React,{' '}
               <strong className="font-medium dark:font-bold">
-                Next.JS, MongoDB
+                Next.JS, Firebase
               </strong>
               , TypeScript and Tailwind CSS.
             </p>
