@@ -30,7 +30,7 @@ export default function Projects() {
             <ChevronDownIcon className="h-4 w-4" />
           </Popover.Button>
 
-          <Popover.Panel className="absolute top-0 z-10 rounded-md bg-white p-4 shadow-md ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-white/5">
+          <Popover.Panel className="absolute top-0 z-10 w-full rounded-md bg-white p-4 shadow-md ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-white/5">
             <h3 className="mb-2 font-semibold">Redo Food Recipes Website</h3>
             <p className="text-sm">
               Using React,{' '}
