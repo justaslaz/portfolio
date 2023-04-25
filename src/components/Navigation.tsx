@@ -1,7 +1,18 @@
 import { useEffect, useState } from 'react';
-import { Switch } from '@headlessui/react';
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { Menu, Switch, Transition } from '@headlessui/react';
+import {
+  Bars3Icon,
+  MoonIcon,
+  SunIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
 import { useDebounce } from '../hooks/useDebounce';
+
+const navLinks = [
+  { title: 'Projects', href: '#projects' },
+  { title: 'Experience', href: '#experience' },
+  { title: 'Contact', href: '#contact' },
+];
 
 export default function Navigation() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -66,28 +77,48 @@ export default function Navigation() {
           : '-translate-y-full transition-transform duration-500 ease-in-out'
       }`}
     >
-      <nav className="flex gap-2 justify-self-start lg:col-start-2 lg:justify-self-center">
-        <a
-          href="#projects"
-          className="cursor-pointer rounded-md border-2 border-violet-400 px-4 py-1 font-medium shadow-sm transition-all duration-300 hover:bg-violet-400 hover:text-violet-50 hover:shadow-md"
-        >
-          Projects
-        </a>
-        <a
-          href="#experience"
-          className="cursor-pointer rounded-md border-2 border-violet-400 px-4 py-1 font-medium shadow-sm transition-all duration-300 hover:bg-violet-400 hover:text-violet-50 hover:shadow-md"
-        >
-          Experience
-        </a>
-        <a
-          href="#contact"
-          className="cursor-pointer rounded-md border-2 border-violet-400 px-4 py-1 font-medium shadow-sm transition-all duration-300 hover:bg-violet-400 hover:text-violet-50 hover:shadow-md"
-        >
-          Contact
-        </a>
+      <nav className="hidden sm:flex sm:gap-2 sm:justify-self-start lg:col-start-2 lg:justify-self-center">
+        {navLinks.map((navLink) => (
+          <a
+            key={navLink.title}
+            href={navLink.href}
+            className="cursor-pointer rounded-md border-2 border-violet-400 px-4 py-1 font-medium shadow-sm transition-all duration-300 hover:bg-violet-400 hover:text-violet-50 hover:shadow-md"
+          >
+            {navLink.title}
+          </a>
+        ))}
       </nav>
 
-      <div className="flex place-items-center gap-1 justify-self-end lg:col-start-3">
+      {/* Mobile Navigation */}
+      <Menu as="div" className="relative justify-self-start sm:hidden">
+        <Menu.Button>
+          <Bars3Icon className="ui-open:hidden h-7 w-7" />
+          <XMarkIcon className="ui-not-open:hidden h-7 w-7" />
+        </Menu.Button>
+        <Transition
+          enterFrom="transform scale-95 opacity-0"
+          enterTo="transform scale-100 opacity-100"
+          enter="transition duration-100 ease-out"
+          leaveFrom="transform scale-100 opacity-100"
+          leaveTo="transform scale-95 opacity-0"
+          leave="transition duration-75 ease-out"
+        >
+          <Menu.Items className="absolute flex flex-col gap-4 rounded-md bg-gray-50/95 p-3 text-sm shadow-lg">
+            {navLinks.map((navLink) => (
+              <Menu.Item
+                as="a"
+                key={navLink.title}
+                href={navLink.href}
+                className="transition-colors hover:text-violet-500"
+              >
+                {navLink.title}
+              </Menu.Item>
+            ))}
+          </Menu.Items>
+        </Transition>
+      </Menu>
+
+      <div className="col-start-2 flex place-items-center gap-1 justify-self-end lg:col-start-3">
         <SunIcon className="h-5 w-5 text-yellow-500 dark:text-yellow-400" />
         <Switch
           checked={isDarkMode}
