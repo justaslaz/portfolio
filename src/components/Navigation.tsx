@@ -71,7 +71,7 @@ export default function Navigation() {
 
   return (
     <div
-      className={`sticky top-0 z-20 grid w-full grid-cols-2 place-items-center gap-6 border-b-2 bg-violet-50 px-6 py-4 dark:border-gray-600 dark:bg-gray-700 lg:grid-cols-3 ${
+      className={`sticky top-0 z-20 grid w-full grid-cols-2 place-items-center gap-6 border-b-2 bg-violet-50 px-6 py-2 dark:border-gray-600 dark:bg-gray-700 sm:py-4 lg:grid-cols-3 ${
         isNavShown
           ? 'translate-y-0 transition-transform duration-500 ease-in-out'
           : '-translate-y-full transition-transform duration-500 ease-in-out'
@@ -90,10 +90,13 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile Navigation */}
-      <Menu as="div" className="relative justify-self-start sm:hidden">
+      <Menu
+        as="div"
+        className="relative flex place-items-center justify-self-start sm:hidden"
+      >
         <Menu.Button>
-          <Bars3Icon className="ui-open:hidden h-7 w-7" />
-          <XMarkIcon className="ui-not-open:hidden h-7 w-7" />
+          <Bars3Icon className="ui-open:hidden h-7 w-7 transition-transform hover:-translate-y-0.5" />
+          <XMarkIcon className="ui-not-open:hidden h-7 w-7 transition-transform hover:-translate-y-0.5" />
         </Menu.Button>
         <Transition
           enterFrom="transform scale-95 opacity-0"
@@ -103,7 +106,7 @@ export default function Navigation() {
           leaveTo="transform scale-95 opacity-0"
           leave="transition duration-75 ease-out"
         >
-          <Menu.Items className="absolute flex flex-col gap-4 rounded-md bg-gray-50/95 p-3 text-sm shadow-lg">
+          <Menu.Items className="absolute top-7 flex flex-col gap-4 rounded-md bg-gray-50/95 p-3 text-sm shadow-lg dark:bg-gray-600/95">
             {navLinks.map((navLink) => (
               <Menu.Item
                 as="a"

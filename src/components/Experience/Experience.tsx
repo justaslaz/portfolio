@@ -6,9 +6,9 @@ export default function Experience() {
   return (
     <div
       id="experience"
-      className="mx-8 mb-20 flex scroll-mt-20 flex-col items-center justify-center"
+      className="mx-4 mb-20 flex scroll-mt-20 flex-col items-center justify-center"
     >
-      <div className="w-full md:w-3/4 lg:w-1/2">
+      <div className="w-full md:w-3/4 lg:w-2/3 2xl:w-fit">
         <Title>Experience</Title>
         {experience
           .slice()

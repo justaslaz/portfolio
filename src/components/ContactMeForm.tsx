@@ -72,7 +72,7 @@ export default function ContactMeForm() {
   };
 
   return (
-    <div id="contact" className="mx-auto mb-14 flex scroll-mt-20 flex-col">
+    <div id="contact" className="mx-4 mb-14 flex scroll-mt-20 flex-col">
       <div className="flex flex-col items-center justify-center">
         {!isSubmitSuccessful && (
           <>
@@ -132,7 +132,7 @@ export default function ContactMeForm() {
                 {...register('message')}
               />
               {/* Submit Button */}
-              <div className="flex h-12 w-48 cursor-pointer items-center justify-center rounded-md bg-gradient-to-br from-pink-500 to-violet-700 px-8 py-3 text-base font-medium text-violet-50 drop-shadow-md transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none ">
+              <div className="flex h-12 w-48 cursor-pointer items-center justify-center self-center rounded-md bg-gradient-to-br from-pink-500 to-violet-700 px-8 py-3 text-base font-medium text-violet-50 drop-shadow-md transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none md:self-start ">
                 <button
                   className="focus:underline focus:underline-offset-4 focus:outline-none"
                   type="submit"

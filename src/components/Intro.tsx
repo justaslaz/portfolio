@@ -1,6 +1,6 @@
 export default function Intro() {
   return (
-    <div className="mb-20 flex flex-col items-center justify-center pt-10 text-center">
+    <div className="mx-4 mb-20 flex flex-col items-center justify-center pt-10 text-center">
       <h1 className="mb-6 font-serif text-5xl font-bold md:mb-8 md:text-6xl">
         Justas Laževnikas
       </h1>
