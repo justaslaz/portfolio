@@ -31,14 +31,17 @@ export default function Projects() {
           </Popover.Button>
 
           <Popover.Panel className="absolute top-0 z-10 w-full rounded-md bg-white p-4 shadow-md ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-white/5">
-            <h3 className="mb-2 font-semibold">Redo Food Recipes Website</h3>
-            <p className="text-sm">
-              Using React,{' '}
-              <strong className="font-medium dark:font-bold">
-                Next.JS, Firebase
-              </strong>
-              , TypeScript and Tailwind CSS.
-            </p>
+            <h3 className="mb-2 font-semibold">
+              Additional functionality for Food Recipes
+            </h3>
+            <ul className="list-inside list-disc text-sm">
+              <li>Create New Recipe (React Hook Forms + Zod)</li>
+              <li>Image upload (UploadThing)</li>
+              <li>
+                Performance and UI/UX improvements (e.g. loading spinners,
+                debounce on search queries, etc.)
+              </li>
+            </ul>
           </Popover.Panel>
         </Popover>
       </div>
